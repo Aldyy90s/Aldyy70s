@@ -1,0 +1,408 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Mona Sans";
+}
+
+body{
+    max-width: 100%;
+    padding: 10px 30px;
+    background: url('dist/img/bg.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
+
+
+}
+    /* MENU */
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo img{
+    width: 50px;
+    border-radius: 50%;    
+}
+
+.menu .logo{
+    font-size: 1.6em;
+}
+
+.menu-list{
+    display: flex;
+    align-items: center;
+}
+
+.menu .menu-navbar{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.menu .menu-navbar a{
+    text-decoration: none;
+    color: black;
+    font-weight: 550;
+    font-size: .85em;
+    transition: .3s;
+}
+.menu .menu-navbar a:hover{
+    color: #74a900;
+}
+.menu-navbar .m-sm{
+    border: 1px solid black;
+    padding: 3px 8px;
+    border-radius: 12px;
+}
+.menu-navbar .m-sm:hover{
+    background-color: #000;
+    color: white;
+}
+
+.menu .menu-list .hamburger{
+    display: none;
+}
+
+@media screen and (max-width : 768px) {
+    .menu-navbar{
+        position: absolute;
+        min-height: 100vh;
+        width: 250px;
+        top: 0;
+        left: -100;
+        flex-direction: column;
+        padding: 20px;
+        background-color: #efefef;
+        opacity: 0;
+    }
+
+    .menu-navbar.menu-active{
+        opacity: 1;
+        left: 0;
+    }
+
+    .menu-list{
+        justify-content: end;
+    }
+
+    .menu .menu-list .hamburger{
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width:576px){
+    .menu .logo{
+        font-size: 1em;
+    }
+}
+
+@media  screen and (max-width : 376px) {
+    .menu-navbar .m-sm{
+        display: none;
+    }
+}
+    /* AKHIR MENU */
+
+    /* HEADER */
+.intro{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+
+.intro h1{
+    font-size: 3.2em;
+}
+.intro .bg-1{
+    background-color: black;
+    color: white;
+    padding: 0 20px;
+    border-radius: 12px;
+}
+.intro p{
+    width: 70%;
+    font-size: .9em;
+    font-weight: 450;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.intro a{
+    width: fit-content;
+    text-decoration: none;
+    font-size: .8em;
+    font-weight: 500;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 12px;
+    border-radius: 10px;
+    transition: .3s;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.intro a:hover{
+    background-color: black;
+    color: white;
+}
+
+@media screen and (max-width : 768px) {
+    .intro h1{
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width : 576px){
+    .intro h1{
+        font-size: 2em;
+    }
+}
+
+@media  screen and (max-width : 376px) {
+    .intro h1{
+        font-size: 1.7em;
+    }
+
+    .intro p{
+        font-size: .7em;
+    }
+}
+    /* AKHIR HEADER */
+
+    /* CONTENT */
+.content{
+    background-color: #000000;
+    color: white;
+    padding: 40px;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    border-radius: 30px;
+}
+
+.content h5{
+    width: fit-content;
+    grid-area: h5;
+    font-size: .8em;
+    font-weight: 400;
+    padding: 5px 10px;
+    border: 1.5px solid white;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+
+.content > p {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+.content h2{
+    grid-area: h2;
+    font-size: 2.3em;
+    text-align: center;
+}
+
+.content .tool{
+    width: 100%;
+    grid-area: tool;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.tools{
+    background-color: #121212;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    transition: .3s;
+    
+}
+.tools:hover{
+    background-color: #74a900;
+    cursor: pointer;
+}
+
+@media screen and (max-width : 768px) {
+    .intro h1{
+        font-size: 2.5em;
+    }
+}
+
+@media  screen and (max-width : 376px) {
+    .content h2{
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .content {
+        padding:20px;
+    }
+
+    .content .tool{
+        grid-template-columns: 1fr;
+
+    }
+}
+
+    /* CONTENT AKHIR */
+
+    /* ABOUT */
+
+.about{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.about-me{
+    width: fit-content;
+    text-align: center;
+    border: 1.5px solid black;
+    padding: 5px 20px;
+    margin: 50px auto 0 auto;
+    border-radius: 10px;
+    font-size: .8em;
+}
+.about h1{
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0;
+}
+.about p{
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 576px) {
+    .about h1{
+        font-size: 2em;
+    }
+
+    .about p{
+        font-size: .8em;
+    }
+    
+}
+
+.work-proces{
+    padding: 40px;
+    border-radius: 30px;
+    background-color: #121212;
+    color: white;
+}
+
+.about .title-proces{
+    width: fit-content;
+    padding: 5px 8px;
+    border-radius: 10px;
+    border: 1.5px solid white;
+    font-size: .8em;
+    font-weight: 400;
+}
+.about .bold-a{
+    background-color: black;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-size: .8em;
+}
+
+.work-proces h5{
+    width: fit-content;
+    border: 1px solid;
+    padding: 5px 12px;
+    border-radius: 20px;
+    align-self: center;
+}
+.work-proces h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.work-proces .grup-proces{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-area: proces;
+    gap: 15px;
+    margin-top: 20px;
+}
+.proces{
+    text-align: center;
+    background-color: #000;
+    border-radius: 12px;
+    padding: 18px;
+    transition: .3s;
+}
+.proces:hover{
+    background-color: #c4ff41;
+}
+.proces:hover p{
+    color: #000;
+}
+.proces:hover h5{
+    background-color: #121212;
+    color: white;
+}
+.proces p{
+    width: 100%;
+    margin-top: 20px;
+}
+.proces h5{
+    text-align: left;
+    background-color: #c5ffee;
+    color: #000;
+    border-radius: 10px;
+    padding: 3px 12px;
+    font-weight: 450;
+    width: fit-content;
+}
+
+@media screen and (max-width : 768px) {
+    .work-proces .grup-proces{
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width : 576px) {
+    body{
+        padding: 10px 15px;
+    }
+
+    .work-proces{
+        padding: 20px;
+    }
+
+    .work-proces h1{
+        font-size: 1.8em;
+    }
+    
+}
+
+@media  screen and (max-width : 376px) {
+    .content h2{
+        font-size: 2em;
+    }
+
+    .proces p{
+        font-size: .8em;
+    }
+
+    .work-proces h1{
+        font-size: 1.5em;
+    }
+}
