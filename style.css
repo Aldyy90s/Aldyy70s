@@ -88,6 +88,7 @@ body{
     .menu-navbar.menu-active{
         opacity: 1;
         left: 0;
+        position: fixed;
     }
 
     .menu-list{
@@ -96,6 +97,7 @@ body{
 
     .menu .menu-list .hamburger{
         display: inline-block;
+        position: fixed;
     }
 }
 
