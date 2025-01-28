@@ -3,8 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Mona Sans";
+    scroll-behavior: smooth;
 }
-
 body{
     max-width: 100%;
     padding: 10px 30px;
@@ -12,15 +12,15 @@ body{
     background-size:cover;
     background-repeat: no-repeat;
     scroll-behavior: smooth;
-
-
 }
+
     /* MENU */
-.menu{
+.navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding-top: 10px;
+    padding-inline: 20px;
 }
 .logo{
     display: flex;
@@ -31,123 +31,130 @@ body{
     width: 50px;
     border-radius: 50%;    
 }
-
-.menu .logo{
+.navbar .logo{
     font-size: 1.6em;
 }
-
-.menu-list{
+.navbar .menu{
     display: flex;
-    align-items: center;
-}
-
-.menu .menu-navbar{
-    display: flex;
-    justify-content: end;
     gap: 20px;
     list-style-type: none;
 }
-
-.menu .menu-navbar a{
+.menu .logo{
+    display: none;
+}
+.line-sidebar{
+    display: none;
+}
+.menu i {
+    margin-right: 10px;
+    font-size: 1.1em;
+    display: none;
+}
+.menu a{
     text-decoration: none;
     color: black;
-    font-weight: 550;
-    font-size: .85em;
+    font-weight: 450;
+    font-size: 1em;
     transition: .3s;
 }
-.menu .menu-navbar a:hover{
+.menu a:hover{
     color: #74a900;
 }
-.menu-navbar .m-sm{
+.menu .m-sm{
     border: 1px solid black;
     padding: 3px 8px;
     border-radius: 12px;
 }
-.menu-navbar .m-sm:hover{
+.menu .m-sm:hover{
     background-color: #000;
     color: white;
 }
-
-.menu .menu-list .hamburger{
+.hamburger-section{
     display: none;
 }
 
 @media screen and (max-width : 768px) {
-    .menu-navbar{
+    .navbar .menu{
         position: absolute;
         min-height: 100vh;
         width: 250px;
         top: 0;
-        left: -100;
+        left: -100%;
         flex-direction: column;
-        padding: 20px;
+        padding: 50px 30px;
         background-color: #efefef;
+        transition: all .3s ease-in-out;
         opacity: 0;
     }
-
-    .menu-navbar.menu-active{
+    .menu .logo{
+        display: flex;
+    }
+    .line-sidebar{
+        display: block;
+    }
+    .menu i {
+        display: inline-block;
+    }
+    .menu.menu-active{
         opacity: 1;
         left: 0;
         position: fixed;
     }
-
-    .menu-list{
-        justify-content: end;
-    }
-
-    .menu .menu-list .hamburger{
+    .hamburger-section,
+    .hamburger-section .hamburger{
         display: inline-block;
-        position: fixed;
     }
 }
 
 @media screen and (max-width:576px){
-    .menu .logo{
+    .navbar .logo{
         font-size: 1em;
     }
 }
 
 @media  screen and (max-width : 376px) {
-    .menu-navbar .m-sm{
+    .menu .m-sm{
         display: none;
     }
 }
     /* AKHIR MENU */
 
-    /* HEADER */
-.intro{
-    margin-top: 100px;
-    margin-bottom: 50px;
+    /* HERO */
+.hero-section{
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
 }
-
-
+.hero-section .intro{
+    padding: 50px 30px;
+}
 .intro h1{
-    font-size: 3.2em;
+    font-size: 4.2em;
 }
 .intro .bg-1{
     background-color: black;
     color: white;
     padding: 0 20px;
-    border-radius: 12px;
+    border-radius: 15px;
 }
 .intro p{
     width: 70%;
-    font-size: .9em;
+    font-size: 1.2em;
     font-weight: 450;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .intro a{
     width: fit-content;
     text-decoration: none;
-    font-size: .8em;
+    font-size: 1em;
     font-weight: 500;
     color: black;
     border: 1px solid black;
     padding: 5px 12px;
     border-radius: 10px;
-    transition: .3s;
-    margin-top: 20px;
+    transition: .3s ease-in-out;
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 .intro a:hover{
@@ -155,23 +162,43 @@ body{
     color: white;
 }
 
-@media screen and (max-width : 768px) {
+@media screen and (max-width:1022px) {
     .intro h1{
         font-size: 2.5em;
+    }
+    .intro a{
+        font-size: .9em;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .intro h1{
+        font-size: 2.8em;
+    }
+    .intro a{
+        font-size: .8em;
     }
 }
 
 @media screen and (max-width : 576px){
-    .intro h1{
+    .intro{
+        padding-inline: 20px;
+    }
+    .hero-section .intro h1{
         font-size: 2em;
+    }
+    .intro p{
+        font-size: 1em;
     }
 }
 
 @media  screen and (max-width : 376px) {
-    .intro h1{
-        font-size: 1.7em;
+    .intro{
+        padding-inline: 18px;
     }
-
+    .hero-section .intro h1{
+        font-size: 1.9em;
+    }
     .intro p{
         font-size: .7em;
     }
@@ -188,7 +215,6 @@ body{
     margin-bottom: 50px;
     border-radius: 30px;
 }
-
 .content h5{
     width: fit-content;
     grid-area: h5;
@@ -199,21 +225,23 @@ body{
     border-radius: 12px;
     margin-bottom: 20px;
     margin-top: 20px;
-
+    transition: .3s ease-in-out;
 }
-
+.content h5:hover{
+    background-color: #74a900;
+    color: #121212;
+    border: 1px solid #121212;
+    cursor: pointer;
+}
 .content > p {
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
 }
-
-
 .content h2{
     grid-area: h2;
     font-size: 2.3em;
     text-align: center;
 }
-
 .content .tool{
     width: 100%;
     grid-area: tool;
@@ -225,12 +253,15 @@ body{
 }
 .tools{
     background-color: #121212;
-    padding: 10px;
+    padding: 20px;
     border-radius: 12px;
     text-align: center;
     transition: .3s;
-    
 }
+.tools p{
+    margin-top: 10px;
+}
+
 .tools:hover{
     background-color: #74a900;
     cursor: pointer;
@@ -244,19 +275,28 @@ body{
 
 @media  screen and (max-width : 376px) {
     .content h2{
-        font-size: 2em;
+        font-size: 1.8em;
+    }
+    .content .tools p{
+        font-size: .8em;
+    }
+    .content p{
+        font-size: .8em;
     }
 }
 
 @media screen and (max-width: 576px) {
-
     .content {
         padding:20px;
     }
-
     .content .tool{
         grid-template-columns: 1fr;
-
+    }
+    .content .tools p{
+        font-size: .9em;
+    }
+    .content p{
+        font-size: .9em;
     }
 }
 
@@ -266,17 +306,22 @@ body{
 
 .about{
     margin-top: 100px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
-
 .about-me{
     width: fit-content;
     text-align: center;
     border: 1.5px solid black;
-    padding: 5px 20px;
+    padding: 6px 20px;
     margin: 50px auto 0 auto;
     border-radius: 10px;
     font-size: .8em;
+    transition: .3s ease-in-out;
+}
+.about-me:hover{
+    background-color: #000;
+    color: white;
+    cursor: pointer;
 }
 .about h1{
     font-size: 2.5em;
@@ -288,16 +333,13 @@ body{
     width: 100%;
     margin-top: 20px;
 }
-
 @media screen and (max-width: 576px) {
     .about h1{
         font-size: 2em;
     }
-
     .about p{
         font-size: .8em;
     }
-    
 }
 
 .work-proces{
@@ -306,7 +348,6 @@ body{
     background-color: #121212;
     color: white;
 }
-
 .about .title-proces{
     width: fit-content;
     padding: 5px 8px;
@@ -322,13 +363,20 @@ body{
     border-radius: 10px;
     font-size: .8em;
 }
-
 .work-proces h5{
     width: fit-content;
-    border: 1px solid;
-    padding: 5px 12px;
-    border-radius: 20px;
-    align-self: center;
+    padding: 5px 8px;
+    border-radius: 10px;
+    border: 1.5px solid white;
+    font-size: .8em;
+    font-weight: 400;
+    transition: .3s ease-in-out;
+}
+.work-proces h5:hover{
+    background-color: #74a900;
+    color: #121212;
+    border: 1px solid #121212;
+    cursor: pointer;
 }
 .work-proces h1{
     margin-top: 20px;
@@ -384,27 +432,188 @@ body{
     body{
         padding: 10px 15px;
     }
-
     .work-proces{
         padding: 20px;
     }
-
     .work-proces h1{
         font-size: 1.8em;
     }
-    
+    .work-proces .proces p{
+        font-size: .9em;
+    }
 }
 
 @media  screen and (max-width : 376px) {
     .content h2{
         font-size: 2em;
     }
-
-    .proces p{
+    .work-proces .proces p{
         font-size: .8em;
     }
-
     .work-proces h1{
         font-size: 1.5em;
+    }
+}
+
+/* MY PORTFOLIO */
+.portfolio{
+margin-top: 100px;
+}
+.portfolio .title-portfolio{
+    width: fit-content;
+    text-align: center;
+    border: 1.5px solid black;
+    padding: 6px 20px;
+    border-radius: 10px;
+    margin-inline: auto;
+    font-size: .8em;
+    transition: .3s ease-in-out;
+}
+.portfolio .title-portfolio:hover{
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+}
+.portfolio > h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.portfolio .bold-a{
+    background-color: black;
+    color: white;
+    padding: 0 15px;
+    border-radius: 12px;
+    margin-left: 10px;
+}
+.portfolio > p {
+    text-align: center;
+}
+.main-portfolio {
+    padding: 40px;
+    border-radius: 30px;
+    background-color: #121212;
+    color: white;
+    margin-top: 100px;
+}
+.main-portfolio > h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.main-portfolio > h5 {
+    width: fit-content;
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 1.5px solid white;
+    font-size: .8em;
+    font-weight: 400;
+    transition: .3s ease-in-out;
+}
+.main-portfolio > h5:hover{
+    background-color: #74a900;
+    color: #121212;
+    border: 1px solid #121212;
+    cursor: po;
+}
+.main-portfolio .swiper .swiper-slide img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+@media screen and (max-width : 576px) {
+
+    .main-portfolio{
+        padding: 20px;
+    }
+    .main-portfolio h1{
+        font-size: 1.8em;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .portfolio > h1{
+        font-size: 1.8em;
+        margin-left: 5px;
+    }
+    .portfolio > p {
+        font-size: .9em;
+    }
+}
+
+@media  screen and (max-width : 376px) {
+    .main-portfolio h1{
+        font-size: 1.5em;
+    }
+    .portfolio p{
+        font-size: .8em;
+    }
+}
+
+footer{
+    margin-top: 150px;
+    padding-bottom: 30px;
+}
+.social-media ul {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+.list-sosmed{
+    display: flex;
+    align-items: center;
+}
+.social-media ul i {
+    margin-top: 3px;
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+.social-media ul i:hover {
+    color: #74a900;
+}
+.social-media ul a{
+    text-decoration: none;
+    color: black;
+    font-weight: 00;
+    font-size: .85em;
+    transition: .3s;
+}
+.social-media ul a:hover{
+    color: #74a900;
+}
+.copyright{
+    text-align: center;
+    margin-top: 20px;
+}
+.copyright p {
+    line-height: 2;
+    font-size: 14px;
+}
+.copyright span {
+    font-weight: bold;
+}
+
+@media screen and (max-width : 576px) {
+    .social-media ul{
+        gap: 30px;
+    }
+    .social-media ul i {
+        font-size: 1.2em;
+    }
+    .copyright p{
+        font-size: 13px;
+    }
+}
+
+@media  screen and (max-width : 376px) {
+    .social-media ul{
+        gap: 10px;
+    }
+    .social-media ul i {
+        font-size: 1em;
+    }
+    .copyright p{
+        font-size: 11px;
     }
 }
