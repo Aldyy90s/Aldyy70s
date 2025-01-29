@@ -80,6 +80,7 @@ body{
         width: 250px;
         top: 0;
         left: -100%;
+        z-index: 10;
         flex-direction: column;
         padding: 50px 30px;
         background-color: #efefef;
@@ -295,6 +296,10 @@ body{
     .content .tools p{
         font-size: .9em;
     }
+    .content h5{
+        padding: 3px 7px;
+        font-size: .7em;
+    }
     .content p{
         font-size: .9em;
     }
@@ -334,6 +339,10 @@ body{
     margin-top: 20px;
 }
 @media screen and (max-width: 576px) {
+    .about-me{
+        padding: 6px 18px;
+        font-size: .6em;
+    }
     .about h1{
         font-size: 2em;
     }
@@ -438,8 +447,16 @@ body{
     .work-proces h1{
         font-size: 1.8em;
     }
+    .work-proces h5 {
+        padding: 3px 7px;
+        font-size: .7em;
+    }
     .work-proces .proces p{
         font-size: .9em;
+    }
+    .proces h5{
+        font-size: .7em;
+        padding: 3px 12px;
     }
 }
 
@@ -528,8 +545,16 @@ margin-top: 100px;
     }
     .main-portfolio h1{
         font-size: 1.8em;
-        margin-top: 10px;
+        margin-top: 5px;
         margin-bottom: 20px;
+    }
+    .main-portfolio h5{
+        padding: 3px 7px;
+        font-size: .7em;
+    }
+    .portfolio .title-portfolio{
+        padding: 6px 18px;
+        font-size: .6em;
     }
     .portfolio > h1{
         font-size: 1.8em;
@@ -600,6 +625,10 @@ footer{
     }
     .social-media ul i {
         font-size: 1.2em;
+        margin-right: 8px;
+    }
+    .social-media ul a{
+        font-size: .75em;
     }
     .copyright p{
         font-size: 13px;
@@ -608,10 +637,14 @@ footer{
 
 @media  screen and (max-width : 376px) {
     .social-media ul{
-        gap: 10px;
+        gap: 15px;
+    }
+    .social-media ul a{
+        font-size: .65em;
     }
     .social-media ul i {
         font-size: 1em;
+        margin-right: 6px;
     }
     .copyright p{
         font-size: 11px;
