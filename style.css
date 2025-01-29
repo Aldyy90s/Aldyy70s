@@ -228,12 +228,12 @@ body{
     margin-top: 20px;
     transition: .3s ease-in-out;
 }
-.content h5:hover{
+/* .content h5:hover{
     background-color: #74a900;
     color: #121212;
     border: 1px solid #121212;
     cursor: pointer;
-}
+} */
 .content > p {
     margin-bottom: 30px;
     text-align: center;
