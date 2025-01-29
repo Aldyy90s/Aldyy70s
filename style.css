@@ -228,12 +228,6 @@ body{
     margin-top: 20px;
     transition: .3s ease-in-out;
 }
-/* .content h5:hover{
-    background-color: #74a900;
-    color: #121212;
-    border: 1px solid #121212;
-    cursor: pointer;
-} */
 .content > p {
     margin-bottom: 30px;
     text-align: center;
@@ -381,12 +375,6 @@ body{
     font-weight: 400;
     transition: .3s ease-in-out;
 }
-.work-proces h5:hover{
-    background-color: #74a900;
-    color: #121212;
-    border: 1px solid #121212;
-    cursor: pointer;
-}
 .work-proces h1{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -526,12 +514,6 @@ margin-top: 100px;
     font-size: .8em;
     font-weight: 400;
     transition: .3s ease-in-out;
-}
-.main-portfolio > h5:hover{
-    background-color: #74a900;
-    color: #121212;
-    border: 1px solid #121212;
-    cursor: po;
 }
 .main-portfolio .swiper .swiper-slide img{
     width: 100%;
