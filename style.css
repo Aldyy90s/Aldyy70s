@@ -233,7 +233,6 @@ body{
     text-align: center;
 }
 .content h2{
-    grid-area: h2;
     font-size: 2.3em;
     text-align: center;
 }
@@ -266,11 +265,14 @@ body{
     .intro h1{
         font-size: 2.5em;
     }
+    .content .tool{
+        grid-template-columns: 1fr;
+    }
 }
 
-@media  screen and (max-width : 376px) {
-    .content h2{
-        font-size: 1.8em;
+@media  screen and (max-width:376px) {
+    .container .content h2{
+        font-size: 1.7em;
     }
     .content .tools p{
         font-size: .8em;
@@ -284,9 +286,6 @@ body{
     .content {
         padding:20px;
     }
-    .content .tool{
-        grid-template-columns: 1fr;
-    }
     .content .tools p{
         font-size: .9em;
     }
@@ -296,6 +295,9 @@ body{
     }
     .content p{
         font-size: .9em;
+    }
+    .container .content h2{
+        font-size: 1.8em;
     }
 }
 
@@ -330,7 +332,14 @@ body{
 .about p{
     text-align: center;
     width: 100%;
-    margin-top: 20px;
+}
+.foto-aldyy{
+    display: flex;
+    justify-content: center;
+}
+.foto-aldyy img{
+    width: 600px;
+    filter: saturate(0);
 }
 @media screen and (max-width: 576px) {
     .about-me{
@@ -338,10 +347,22 @@ body{
         font-size: .6em;
     }
     .about h1{
-        font-size: 2em;
+        font-size: 1.8em;
     }
     .about p{
         font-size: .8em;
+    }
+    .foto-aldyy img{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width:376px){
+    .about h1 {
+        font-size: 1.7em;
+    }
+    .foto-aldyy img{
+        width: 280px;
     }
 }
 
